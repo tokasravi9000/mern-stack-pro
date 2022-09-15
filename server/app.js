@@ -1,6 +1,29 @@
+const mongoose = require("mongoose");
 const express = require("express");
 
 const app = express();
+
+const DB =
+  "mongodb+srv://twork:Twork%232020@cluster0.z0hjj.mongodb.net/Mern-stack?retryWrites=true&w=majority";
+
+mongoose
+  .connect(DB, {
+    useNewUrlParser: true,
+    //useCreateIndex: true,
+    useUnifiedTopology: true,
+    //useFindAndModify: false,
+  })
+  .then(() => {
+    console.log(`Connection successful`);
+  })
+  .catch((err) => {
+    console.log(`DB not connected`, err);
+  });
+
+// Middleware
+const middleware = (req, res, next) => {
+  console.log(`Hello my middleware`);
+};
 
 // Default link
 app.get("/", (req, res) => {
@@ -8,7 +31,7 @@ app.get("/", (req, res) => {
 });
 
 // about link page
-app.get("/about", (req, res) => {
+app.get("/about", middleware, (req, res) => {
   res.send(`About Page from the server`);
 });
 

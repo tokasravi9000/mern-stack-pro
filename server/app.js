@@ -1,24 +1,12 @@
+const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const express = require("express");
 
 const app = express();
 
-const DB =
-  "mongodb+srv://twork:Twork%232020@cluster0.z0hjj.mongodb.net/Mern-stack?retryWrites=true&w=majority";
+dotenv.config({ path: "./config.env" });
 
-mongoose
-  .connect(DB, {
-    useNewUrlParser: true,
-    //useCreateIndex: true,
-    useUnifiedTopology: true,
-    //useFindAndModify: false,
-  })
-  .then(() => {
-    console.log(`Connection successful`);
-  })
-  .catch((err) => {
-    console.log(`DB not connected`, err);
-  });
+const PORT = process.env.PORT;
 
 // Middleware
 const middleware = (req, res, next) => {
@@ -50,6 +38,6 @@ app.get("/signup", (req, res) => {
   res.send(`sign up page from the server`);
 });
 
-app.listen(3001, () => {
-  console.log(`Server is running at port no 3001`);
+app.listen(PORT, () => {
+  console.log(`Server is running at port no ${PORT}`);
 });

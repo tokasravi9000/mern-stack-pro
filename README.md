@@ -7,3 +7,4 @@
 5. Creating the User Schema & Model for our MERN Project
 6. Express Router Middleware Setup & Getting Data Back From POSTMAN to Our MERN Application
 7. Storing the User Data in the Online Database using Express & Mongoose | Promises Version
+8. Post Registration Data To MongoDB Atlas DB with Express & Mongoose | Async-Await Version

@@ -6,3 +6,4 @@
 4. Secure Your Code by Keeping your Password, API Keys Secret with DOTENV.
 5. Creating the User Schema & Model for our MERN Project
 6. Express Router Middleware Setup & Getting Data Back From POSTMAN to Our MERN Application
+7. Storing the User Data in the Online Database using Express & Mongoose | Promises Version

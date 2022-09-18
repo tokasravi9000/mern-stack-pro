@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
   res.send(`Hello world from the server router.js`);
 });
 
-// Data save with promise
+// Register Data save with promise
 // router.post("/register", (req, res) => {
 //   const { name, email, phone, work, password, cpassword } = req.body;
 //   if (!name || !email || !phone || !work || !password || !cpassword) {
@@ -35,7 +35,7 @@ router.get("/", (req, res) => {
 //     });
 // });
 
-// Data Save with async await
+// Register Data Save with async await
 router.post("/register", async (req, res) => {
   const { name, email, phone, work, password, cpassword } = req.body;
   if (!name || !email || !phone || !work || !password || !cpassword) {
@@ -45,12 +45,35 @@ router.post("/register", async (req, res) => {
     const userExist = await User.findOne({ email: email });
     if (userExist) {
       return res.status(422).json({ error: "Email ID already exist" });
+    } else if (password != cpassword) {
+      return res.status(422).json({ error: "Password are not matched" });
+    } else {
+      const user = new User({ name, email, phone, work, password, cpassword });
+
+      await user.save();
+
+      res.status(201).json({ message: "user registered successfully" });
     }
-    const user = new User({ name, email, phone, work, password, cpassword });
+  } catch (err) {
+    console.log(err);
+  }
+});
 
-    await user.save();
+// Login Route
+router.post("/login", async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    if (!email || !password) {
+      return res.status(400).json({ error: "Please filled the data" });
+    }
+    const userLogin = await User.findOne({ email: email });
 
-    res.status(201).json({ message: "user registered successfully" });
+    if (!userLogin) {
+      res.status(400).json({ error: "user error" });
+    } else {
+      res.json({ message: "User signin successfully... " });
+    }
+    //console.log(userLogin);
   } catch (err) {
     console.log(err);
   }

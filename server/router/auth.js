@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 require("../db/conn");
 const User = require("../model/userSchema");
@@ -72,6 +73,14 @@ router.post("/login", async (req, res) => {
 
     if (userLogin) {
       const passMatch = await bcrypt.compare(password, userLogin.password);
+
+      const token = await userLogin.generateAuthToken();
+      console.log(token);
+
+      res.cookie("jwtoken", token, {
+        expires: new Date(Date.now() + 25892000000),
+        httpOnly: true,
+      });
 
       if (!passMatch) {
         res.status(400).json({ error: "Invalid cridentials1" });

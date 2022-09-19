@@ -10,3 +10,6 @@
 8. Post Registration Data To MongoDB Atlas DB with Express & Mongoose | Async-Await Version
 9. How to Secure Your Passwords? Password Hashing using Bcrypt.JS
 10. Check Hash Password and Email & Implementing Login Functionality
+11. User Authentication Using JWT & Stored Token In MongoDB Atlas
+12. How to Store JWT Token in Cookie For Authentication
+13. Let's Start Front-End with ReactJS | Hello World using React JS

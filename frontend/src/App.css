@@ -1,0 +1,22 @@
+a {
+  text-decoration: none !important;
+}
+p {
+}
+
+.signup-block {
+  width: 750px;
+  margin: auto;
+  background: #fff;
+  box-shadow: 0 5px 12px rgb(0 0 0 / 8%), 0 3px 12px rgb(0 0 0 / 8%);
+  border-radius: 1rem;
+}
+.signup-block input.form-control {
+  border: none !important;
+  border-left: #0d6efd 5px solid !important;
+  border-radius: 0 !important;
+  background: #f8f9fa;
+}
+.signup-block .btn {
+  text-transform: uppercase;
+}

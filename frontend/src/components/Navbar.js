@@ -1,13 +1,15 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
+import { NavLink } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+          <NavLink className="navbar-brand" to="#">
             Logo
-          </a>
+          </NavLink>
           <button
             className="navbar-toggler"
             type="button"
@@ -22,25 +24,29 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                <NavLink className="nav-link" to="/">
                   Home
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <NavLink className="nav-link" to="/about">
                   About
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <NavLink className="nav-link" to="/contact">
                   Contact
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link">Login</a>
+                <NavLink className="nav-link" to="/login">
+                  Login
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link">Register</a>
+                <NavLink className="nav-link" to="/signup">
+                  Register
+                </NavLink>
               </li>
             </ul>
           </div>

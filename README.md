@@ -14,3 +14,5 @@
 12. How to Store JWT Token in Cookie For Authentication
 13. Let's Start Front-End with ReactJS | Hello World using React JS
 14. Create Responsive NAVBAR (MENU)
+15. How to Open the New Page Without Reloading or Refresh the Page with REACT-ROUTER-DOM
+16. Create login sign up pages

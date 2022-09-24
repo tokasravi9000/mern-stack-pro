@@ -40,8 +40,12 @@ router.get("/", (req, res) => {
 // Register Data Save with async await
 router.post("/register", async (req, res) => {
   const { name, email, phone, work, password, cpassword } = req.body;
+  console.log(req.body);
+
   if (!name || !email || !phone || !work || !password || !cpassword) {
-    return res.status(422).json({ error: "Plz filled the blank property" });
+    return res.status(422).json({
+      error: "Plz filled the blank property ",
+    });
   }
   try {
     const userExist = await User.findOne({ email: email });

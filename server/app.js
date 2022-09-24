@@ -10,8 +10,6 @@ require("./db/conn");
 //const User = require("./model/userSchema");
 
 app.use(express.json());
-
-app.use(express.json());
 // We link the router files for make our route easy
 app.use(require("./router/auth"));
 

@@ -67,8 +67,11 @@ router.post("/register", async (req, res) => {
 
 // Login Route
 router.post("/login", async (req, res) => {
+  console.log("reached router /login");
+  console.log(req.body);
   try {
     const { email, password } = req.body;
+    console.log(req.body);
     if (!email || !password) {
       return res.status(400).json({ error: "Please filled the data" });
     }

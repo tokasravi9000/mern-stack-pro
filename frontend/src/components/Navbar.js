@@ -7,7 +7,7 @@ const Navbar = () => {
     <>
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid">
-          <NavLink className="navbar-brand" to="#">
+          <NavLink className="navbar-brand" to="/">
             Logo
           </NavLink>
           <button
